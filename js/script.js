@@ -24,7 +24,7 @@ const app = new Vue({
                         status: 'recived'
                     },
                 ]
-            },
+            }, 
             {
                 name: 'Cetto la qualunque',
                 lastAccess: '13:34',
