@@ -226,11 +226,6 @@ header {
     font-size: 10px;
 }
 
-.chat-footer {
-    height: 3.5rem;
-    background-color: #f3eee9;
-}
-
 .chat-body {
     height: calc(100% - 7rem);
     background-image: url('../img/mine.jpg');
@@ -238,13 +233,16 @@ header {
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .main-user-text {
     border-radius: 10px;
     background-color: #d5f9ba;
     width:fit-content;
+    margin-top: 1rem;
     min-width: 10rem;
+    max-width: 20rem;
     padding: .5rem .5rem 0 .5rem;
     align-self: flex-end;
     margin-right: 1rem;
@@ -256,8 +254,10 @@ header {
 .contact-text {
     border-radius: 10px;
     background-color: #fff;
+    margin-top: 1rem;
     width:fit-content;
     min-width: 10rem;
+    max-width: 20rem;
     padding: .5rem .5rem 0 .5rem;
     float: left;
     margin-left: 1rem;
@@ -276,4 +276,30 @@ header {
 .contact-text p,
 .main-user-text p {
     margin-left: .4rem;
+}
+
+.chat-footer {
+    height: 3.5rem;
+    background-color: #f3eee9;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.emoji {
+    font-size: 1.4rem;
+    
+}
+
+.new-text-chat {
+    width: 70%;
+    height: 2.5rem;
+    border: transparent;
+    border-radius: .4rem;
+    padding-left: 1rem;
+}
+
+.speak {
+    font-size: 1.4rem;
+    
 }
