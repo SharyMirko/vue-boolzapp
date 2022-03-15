@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Noto Serif Display', serif;
 }
 
 body {
@@ -165,6 +166,10 @@ header {
     padding: 1rem;
 }
 
+.chat-container.active {
+    background-color: #e8ebeb;
+}
+
 .user-avatar img {
     width: 50px;
     height: 50px;
@@ -176,6 +181,7 @@ header {
     flex-direction: column;
     width:  100%;
 }
+
 
 .chat-container:hover {
     background-color: #e8ebeb;
