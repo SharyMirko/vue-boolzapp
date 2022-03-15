@@ -235,4 +235,45 @@ header {
     height: calc(100% - 7rem);
     background-image: url('../img/mine.jpg');
     background-repeat: repeat;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-user-text {
+    border-radius: 10px;
+    background-color: #d5f9ba;
+    width:fit-content;
+    min-width: 10rem;
+    padding: .5rem .5rem 0 .5rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-text {
+    border-radius: 10px;
+    background-color: #fff;
+    width:fit-content;
+    min-width: 10rem;
+    padding: .5rem .5rem 0 .5rem;
+    float: left;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-text span,
+.main-user-text span {
+    font-size: 10px;
+    align-self: flex-end;
+    padding: .3rem;
+}
+
+.contact-text p,
+.main-user-text p {
+    margin-left: .4rem;
 }
