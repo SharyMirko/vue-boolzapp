@@ -193,3 +193,46 @@ header {
     display: inline;
     font-size: 11px;
 }
+
+.chat-header {
+    height: 3.5rem;
+    width: 100%;
+    background-color: #eaeaea;
+    border-left: .1px solid black;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info .user-avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.user {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.user span {
+    font-size: 10px;
+}
+
+.chat-footer {
+    height: 3.5rem;
+    background-color: #f3eee9;
+}
+
+.chat-body {
+    height: calc(100% - 7rem);
+    background-image: url('../img/mine.jpg');
+    background-repeat: repeat;
+}
