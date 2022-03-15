@@ -26,6 +26,24 @@ const app = new Vue({
                 ]
             },
             {
+                name: 'Cetto la qualunque',
+                lastAccess: '13:34',
+                img: 'img/avatar_1.jpg',
+                chat: [
+                    {
+                        text: 'Secondo me non dobbiamo inquinare',
+                        data: '12:34',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'Hai ragione Mirko. Però come criterio di massima, come sistema di riferimento, come atteggiamento preferenziale: tu fatti i cazzi toi.',
+                        data: '12:34',
+                        status: 'recived'
+                    },
+                    
+                ]
+            },
+            {
                 name: 'Dart Vather (Your Father)',
                 lastAccess: '13:54',
                 img: 'img/avatar_2.jpg',
