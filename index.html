@@ -39,13 +39,13 @@
                 <!-- CHAT LIST  -->
                 <div class="chat-list">
                     <!-- chat container -->
-                    <div class="chat-container">
+                    <div v-for="(item, index) in arrContact" class="chat-container">
                         <div class="user-avatar">
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="item.img" alt="">
                         </div>
                         <div class="chat-content">
                             <div class="chat-info">
-                                <p>Michele C.</p>
+                                <p>{{ item.name }}</p>
                                 <span>12.34</span>
                             </div>
                             <div class="chat-last-text">
@@ -53,34 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="chat-container">
-                        <div class="user-avatar">
-                            <img src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="chat-content">
-                            <div class="chat-info">
-                                <p>Michele C.</p>
-                                <span>12.34</span>
-                            </div>
-                            <div class="chat-last-text">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-container">
-                        <div class="user-avatar">
-                            <img src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="chat-content">
-                            <div class="chat-info">
-                                <p>Michele C.</p>
-                                <span>12.34</span>
-                            </div>
-                            <div class="chat-last-text">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                    </div>
+             
                 
                 </div>
                 <!-- ^ END CHAT LIST ^ -->
