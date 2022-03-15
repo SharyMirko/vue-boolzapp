@@ -9,17 +9,17 @@ const app = new Vue({
                 img: 'img/avatar_1.jpg',
                 chat: [
                     {
-                        text: 'lorem',
+                        text: 'Looking for you',
                         data: '12:34',
                         status: 'recived'
                     },
                     {
-                        text: 'lorem',
+                        text: 'I am not Harry!',
                         data: '12:34',
                         status: 'sent'
                     },
                     {
-                        text: 'lorem',
+                        text: 'Ops! Wrong chat!',
                         data: '12:34',
                         status: 'recived'
                     },
