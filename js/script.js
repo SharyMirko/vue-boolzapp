@@ -1,37 +1,106 @@
 const app = new Vue({
     el: '#root',
     data: {
+        activeChat: 0,
         arrContact: [
             {
                 name: 'Voldemort',
                 lastAccess: '13:34',
-                img: 'img/avatar_1.jpg'
+                img: 'img/avatar_1.jpg',
+                chat: [
+                    {
+                        text: 'lorem',
+                        data: '12:34',
+                        status: 'recived'
+                    },
+                    {
+                        text: 'lorem',
+                        data: '12:34',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'lorem',
+                        data: '12:34',
+                        status: 'recived'
+                    },
+                ]
             },
             {
                 name: 'Dart Vather (Your Father)',
-                lastAccess: '13:34',
-                img: 'img/avatar_2.jpg'
+                lastAccess: '13:54',
+                img: 'img/avatar_2.jpg',
+                chat: [
+                    {
+                        text: 'Hey! I am your father',
+                        data: '12:34',
+                        status: 'recived'
+                    },
+                    {
+                        text: 'No way!',
+                        data: '12:35',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'Ask your mom!',
+                        data: '12:36',
+                        status: 'recived'
+                    },
+                ]
             },
             {
                 name: 'Buffy the Slayer',
                 lastAccess: '13:34',
-                img: 'img/avatar_3.jpg'
-            },
-            {
-                name: 'Naraku',
-                lastAccess: '13:34',
-                img: 'img/avatar_4.jpg'
-            },
-            {
-                name: 'Mario',
-                lastAccess: '13:34',
-                img: 'img/avatar_5.jpg'
+                img: 'img/avatar_3.jpg',
+                chat: [
+                    {
+                        text: 'I love you!',
+                        data: '12:34',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'Are you a vampire?',
+                        data: '12:35',
+                        status: 'recived'
+                    },
+                    {
+                        text: 'No!',
+                        data: '12:36',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'Then you are not my type!',
+                        data: '12:36',
+                        status: 'recived'
+                    },
+                ]
             },
             {
                 name: '420',
                 lastAccess: '13:34',
-                img: 'img/avatar_6.jpg'
+                img: 'img/avatar_6.jpg',
+                chat: [
+                    {
+                        text: 'Are u available?',
+                        data: '12:34',
+                        status: 'sent'
+                    },
+                    {
+                        text: 'See you in 15 min',
+                        data: '12:34',
+                        status: 'recived'
+                    },
+                    {
+                        text: 'Awesome!',
+                        data: '12:34',
+                        status: 'sent'
+                    }
+                ]
             },
         ]
+    },
+    methods: {
+        selectChat: function (index) {
+            this.activeChat = index
+        }
     }
 });

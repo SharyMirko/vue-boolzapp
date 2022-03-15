@@ -41,14 +41,14 @@
                 <!-- CHAT LIST  -->
                 <div class="chat-list">
                     <!-- chat container -->
-                    <div v-for="(item, index) in arrContact" class="chat-container">
+                    <div v-for="(item, index) in arrContact" class="chat-container" @click="selectChat(index)">
                         <div class="user-avatar">
                             <img :src="item.img" alt="">
                         </div>
                         <div class="chat-content">
                             <div class="chat-info">
                                 <p>{{ item.name }}</p>
-                                <span>12.34</span>
+                                <span>{{item.lastAccess}}</span>
                             </div>
                             <div class="chat-last-text">
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
@@ -66,12 +66,12 @@
             <div class="rightbar">
                 <!-- chat header -->
                 <div class="chat-header">
-                    <div class="user-info">
+                    <div v-for="(item, index) in arrContact" class="user-info" :class="activeChat === index ? 'active' : ''">
                         <div class="user-avatar">
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="item.img" alt="">
                         </div>
-                        <div class="user"><p>Michele</p>
-                            <span>ultimo accesso </span>
+                        <div class="user"><p>{{item.name}}</p>
+                            <span>{{item.lastAccess}}</span>
                         </div>
                     </div>
                     <div class="chat-setting-icon">
@@ -82,19 +82,13 @@
                 </div>
 
                 <!-- chat body -->
-                <div class="chat-body">
-                    <div class="main-user-text">
-                        <p>ciao com'è?</p>
-                        <span>12.32</span>
+                <div v-for="(item, index) in arrContact" class="chat-body" :class="activeChat === index ? 'active' : ''">
+                    <div v-for="ele in item.chat" 
+                    :class="ele.status == 'recived' ? 'contact-text' : 'main-user-text'">
+                        <p>{{ ele.text }}</p>
+                        <span>{{ele.data}}</span>
                     </div>
-                    <div class="contact-text">
-                        <p>tutt'apposto</p>
-                        <span>12.34</span>
-                    </div>
-                    <div class="main-user-text">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo voluptatem nulla eius aliquam illum animi iste asperiores quia omnis facere. Veniam rerum officiis reiciendis ex error voluptatibus dolor assumenda ipsam.</p>
-                        <span>12.35</span>
-                    </div>
+                   
 
                 </div>
 
