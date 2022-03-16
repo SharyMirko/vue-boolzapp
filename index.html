@@ -54,7 +54,7 @@
                                 <span>{{item.lastAccess}}</span>
                             </div>
                             <div class="chat-last-text">
-                                <p>{{ item.chat[item.chat.length -1].text.substr(0, 27) }} <span v-if="item.chat[item.chat.length -1].text.length > 27">...</span>  </p>
+                                <p>{{ item.chat[item.chat.length -1].text.substr(0, 35) }} <span v-if="item.chat[item.chat.length -1].text.length > 35">...</span>  </p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                     <div class="emoji">
                         <i class="bi bi-emoji-smile"></i>
                     </div>
-                    <input v-model="newtext" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="addText(index); answer(index);">
+                    <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); ">
                     <div class="speak">
                         <i class="bi bi-mic-fill"></i>
                     </div>

@@ -3,6 +3,11 @@ const app = new Vue({
     data: {
         newtext: '',
         activeChat: 0,
+        newText: {
+            text: '',
+            data: '',
+            status: ''
+        },
         arrContact: [
             {
                 name: 'Voldemort',
@@ -121,7 +126,10 @@ const app = new Vue({
             'Dici sul serio?',
             'Okay',
             'Sei una brutta persona',
-            'No dai scherzavo'
+            'No dai scherzavo',
+            'Sul serio?',
+            'Sai cosa ti dico?',
+            'Si turbo, molto veloce! Gran bello animalo'
         ],
     },
     methods: {
@@ -129,30 +137,28 @@ const app = new Vue({
             this.activeChat = index
         },
         addText: function (index){
-            let newObj = {
-                text: '',
-                data: '',
-                status: 'sent'
+            if(this.newText.text != '')
+            {this.newText.text = this.newText.text.trim()
+            const d = new Date();
+            this.newText.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
+            this.newText.status = 'sent'
+            this.arrContact[index].chat.push({...this.newText})
+            this.newText.text = ''
             }
-            if(this.newtext != '')
-            {newObj.text = this.newtext.trim()
-                const d = new Date();
-                newObj.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
-            this.arrContact[index].chat.push(newObj)
-            this.newtext = ''}
         },
         answer(index){
-            setTimeout(() => {let newObj2 = {
-                text: '',
-                data: '',
-                status: 'recived'
-            }
+            if(this.newText.text != '')
+            {
+            setTimeout(() => {
             let randomIndex = Math.floor(Math.random() * this.arrRandomText.length)
-            newObj2.text = this.arrRandomText[randomIndex]
+            this.newText.text = this.arrRandomText[randomIndex]
             const d = new Date();
-            newObj2.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
-            this.arrContact[index].chat.push(newObj2)}, 3000)
-        },
+            this.newText.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
+            this.newText.status = 'recived'
+            this.arrContact[index].chat.push({...this.newText})
+            this.newText.text = ''
+            }, 3000)
+        }},
     },
 
 });
