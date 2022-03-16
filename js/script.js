@@ -1,6 +1,8 @@
 const app = new Vue({
     el: '#root',
     data: {
+        messageId: 0,
+        dropdown: false,
         newtext: '',
         activeChat: 0,
         userSearch: '',
@@ -18,17 +20,20 @@ const app = new Vue({
                     {
                         text: 'Looking for you',
                         data: '12:34',
-                        status: 'recived'
+                        status: 'recived',
+                        menu: false
                     },
                     {
                         text: 'I am not Harry!',
                         data: '12:34',
-                        status: 'sent'
+                        status: 'sent',
+                        menu: false
                     },
                     {
                         text: 'Ops! Wrong chat!',
                         data: '12:34',
-                        status: 'recived'
+                        status: 'recived',
+                        menu: false
                     },
                 ],
                 visibility: true
@@ -173,6 +178,12 @@ const app = new Vue({
                     element.visibility = false;
                 }
             });
+        },
+        menu(index, i) {
+            this.arrContact[index].chat[i].menu = !this.arrContact[index].chat[i].menu
+        },
+        deleteText(index, i) {
+            this.arrContact[index].chat.splice(i, 1);
         }
     },
 

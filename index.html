@@ -86,12 +86,18 @@
 
                 <!-- chat body -->
                 <div v-for="(item, index) in arrContact" class="chat-body" :class="activeChat === index ? 'active' : ''">
-                    <div v-for="ele in item.chat" 
-                    :class="ele.status == 'recived' ? 'contact-text' : 'main-user-text'">
+                    
+                    <div v-for="(ele, i) in item.chat" 
+                    :class="ele.status == 'recived' ? 'contact-text' : 'main-user-text'" @contextmenu.prevent="menu(index, i)">
                         <p>{{ ele.text }}</p>
                         <span>{{ele.data}}</span>
+                    <div class="dropdown" :class="ele.menu == true ? 'drop-active' : ''">
+                        <ul :class="{sent: ele.status == 'sent'}">
+                            <li @click="deleteText(index, i)">Elimina Messaggio</li>
+                        </ul>
                     </div>
-                   
+                    </div>
+                    
 
                 </div>
 
