@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#root',
     data: {
+        newtext: '',
         activeChat: 0,
         arrContact: [
             {
@@ -114,11 +115,45 @@ const app = new Vue({
                     }
                 ]
             },
-        ]
+        ],
+        arrRandomText: [
+            'Mi che sono bello',
+            'Dici sul serio?',
+            'Okay',
+            'Sei una brutta persona',
+            'No dai scherzavo'
+        ],
     },
     methods: {
         selectChat: function (index) {
             this.activeChat = index
-        }
-    }
+        },
+        addText: function (index){
+            let newObj = {
+                text: '',
+                data: '',
+                status: 'sent'
+            }
+            if(this.newtext != '')
+            {newObj.text = this.newtext.trim()
+            newObj.data = '12:35'
+            this.arrContact[index].chat.push(newObj)
+            this.newtext = ''}
+        },
+        answer(index){
+            setTimeout(() => {let newObj2 = {
+                text: '',
+                data: '',
+                status: 'recived'
+            }
+            let randomIndex = Math.floor(Math.random() * this.arrRandomText.length)
+            newObj2.text = this.arrRandomText[randomIndex]
+            newObj2.data = '13:32'
+            this.arrContact[index].chat.push(newObj2)}, 3000)
+            
+        },
+    },
+
 });
+
+

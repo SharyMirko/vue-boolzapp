@@ -322,6 +322,11 @@ header {
     border: transparent;
     border-radius: .4rem;
     padding-left: 1rem;
+    display: none;
+}
+
+.new-text-chat.active {
+   display: block;
 }
 
 .speak {

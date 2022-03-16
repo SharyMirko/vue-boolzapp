@@ -100,7 +100,7 @@
                     <div class="emoji">
                         <i class="bi bi-emoji-smile"></i>
                     </div>
-                    <input type="text" name="" class="new-text-chat" placeholder="Scrivi un messaggio">
+                    <input v-model="newtext" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="addText(index); answer(index);">
                     <div class="speak">
                         <i class="bi bi-mic-fill"></i>
                     </div>
