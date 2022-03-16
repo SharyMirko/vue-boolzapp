@@ -12,7 +12,7 @@ const app = new Vue({
             {
                 name: 'Voldemort',
                 lastAccess: '13:34',
-                img: 'img/avatar_1.jpg',
+                img: 'img/voldemort.jpg',
                 chat: [
                     {
                         text: 'Looking for you',
@@ -34,7 +34,7 @@ const app = new Vue({
             {
                 name: 'Cetto la qualunque',
                 lastAccess: '13:34',
-                img: 'img/avatar_1.jpg',
+                img: 'img/cetto.jpg',
                 chat: [
                     {
                         text: 'Secondo me non dobbiamo inquinare',
@@ -52,7 +52,7 @@ const app = new Vue({
             {
                 name: 'Dart Vather (Your Father)',
                 lastAccess: '13:54',
-                img: 'img/avatar_2.jpg',
+                img: 'img/darth.webp',
                 chat: [
                     {
                         text: 'Hey! I am your father',
@@ -74,7 +74,7 @@ const app = new Vue({
             {
                 name: 'Buffy the Slayer',
                 lastAccess: '13:34',
-                img: 'img/avatar_3.jpg',
+                img: 'img/buffy.jpg',
                 chat: [
                     {
                         text: 'I love you!',
@@ -101,7 +101,7 @@ const app = new Vue({
             {
                 name: '420',
                 lastAccess: '13:34',
-                img: 'img/avatar_6.jpg',
+                img: 'img/fibra.jpg',
                 chat: [
                     {
                         text: 'Are u available?',
