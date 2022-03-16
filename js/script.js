@@ -136,7 +136,8 @@ const app = new Vue({
             }
             if(this.newtext != '')
             {newObj.text = this.newtext.trim()
-            newObj.data = '12:35'
+                const d = new Date();
+                newObj.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
             this.arrContact[index].chat.push(newObj)
             this.newtext = ''}
         },
@@ -148,9 +149,9 @@ const app = new Vue({
             }
             let randomIndex = Math.floor(Math.random() * this.arrRandomText.length)
             newObj2.text = this.arrRandomText[randomIndex]
-            newObj2.data = '13:32'
+            const d = new Date();
+            newObj2.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
             this.arrContact[index].chat.push(newObj2)}, 3000)
-            
         },
     },
 

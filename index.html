@@ -54,7 +54,7 @@
                                 <span>{{item.lastAccess}}</span>
                             </div>
                             <div class="chat-last-text">
-                                <p>{{ item.chat[item.chat.length -1].text}} </p>
+                                <p>{{ item.chat[item.chat.length -1].text.substr(0, 27) }} <span v-if="item.chat[item.chat.length -1].text.length > 27">...</span>  </p>
                             </div>
                         </div>
                     </div>
