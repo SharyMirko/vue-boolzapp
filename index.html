@@ -39,12 +39,12 @@
                 </div>
                 <!-- search bar -->
                 <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="Search">
+                    <input v-model="userSearch" type="text" class="search-input" @keyup="search" placeholder="Search">
                 </div>
                 <!-- CHAT LIST  -->
                 <div class="chat-list">
                     <!-- chat container -->
-                    <div v-for="(item, index) in arrContact" class="chat-container" @click="selectChat(index)" :class="activeChat === index ? 'active' : ''">
+                    <div v-if="item.visibility == true" v-for="(item, index) in arrContact" class="chat-container" @click="selectChat(index)" :class="activeChat === index ? 'active' : ''">
                         <div class="user-avatar">
                             <img :src="item.img" alt="">
                         </div>

@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
         newtext: '',
         activeChat: 0,
+        userSearch: '',
         newText: {
             text: '',
             data: '',
@@ -29,7 +30,8 @@ const app = new Vue({
                         data: '12:34',
                         status: 'recived'
                     },
-                ]
+                ],
+                visibility: true
             }, 
             {
                 name: 'Cetto la qualunque',
@@ -47,7 +49,8 @@ const app = new Vue({
                         status: 'recived'
                     },
                     
-                ]
+                ],
+                visibility: true
             },
             {
                 name: 'Dart Vather (Your Father)',
@@ -69,7 +72,8 @@ const app = new Vue({
                         data: '12:36',
                         status: 'recived'
                     },
-                ]
+                ],
+                visibility: true
             },
             {
                 name: 'Buffy the Slayer',
@@ -96,7 +100,8 @@ const app = new Vue({
                         data: '12:36',
                         status: 'recived'
                     },
-                ]
+                ],
+                visibility: true
             },
             {
                 name: '420',
@@ -118,7 +123,8 @@ const app = new Vue({
                         data: '12:34',
                         status: 'sent'
                     }
-                ]
+                ],
+                visibility: true
             },
         ],
         arrRandomText: [
@@ -159,6 +165,15 @@ const app = new Vue({
             this.newText.text = ''
             }, 3000)
         }},
+        search() {
+            this.arrContact.forEach((el) => {
+                if (el.name.toLowerCase().includes(this.userSearch)) {
+                    el.visibility = true;
+                } else {
+                    el.visibility = false;
+                }
+            });
+        }
     },
 
 });
