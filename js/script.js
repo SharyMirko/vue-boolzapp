@@ -167,10 +167,10 @@ const app = new Vue({
         }},
         search() {
             this.arrContact.forEach((element) => {
-                if (element.name.toLowerCase().includes(this.userSearch)) {
+                if (element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
                     element.visibility = true;
                 } else {
-                    el.visibility = false;
+                    element.visibility = false;
                 }
             });
         }
