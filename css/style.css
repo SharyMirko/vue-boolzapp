@@ -433,3 +433,11 @@ ul.sent {
     justify-content: center;
     color: #fff;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

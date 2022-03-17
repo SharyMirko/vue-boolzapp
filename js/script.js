@@ -1,6 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
+        micIcon: true,
+        sendIcon: false,
         newChatMenu: false,
         newChatName: '',
         newChatText: '',
@@ -173,6 +175,9 @@ const app = new Vue({
         },
         online(index) {
             this.arrContact[index].lastAccess = 'Online'
+            if(this.newText.text != '') {
+            this.sendIcon = true
+            this.micIcon = false}
         },
         addText: function (index){
             if(this.newText.text != '')
@@ -182,6 +187,8 @@ const app = new Vue({
             this.newText.status = 'sent'
             this.arrContact[index].chat.push({...this.newText})
             this.newText.text = ''
+            this.sendIcon = false
+            this.micIcon = true
             }
         },
         answer(index){
@@ -250,6 +257,9 @@ const app = new Vue({
                 }, 3000)
 
            } 
+        },
+        toggleIcon(){
+            this.sendIcon = !this.sendIcon
         }
     },
 

@@ -110,10 +110,11 @@
                     <div class="emoji">
                         <i class="bi bi-emoji-smile"></i>
                     </div>
-                    <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); " @keydown="online(index)">
-                    <div class="speak">
-                        <i class="bi bi-mic-fill"></i>
-                    </div>
+                    <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); " @keydown="online(index);">
+                    
+                        <i  @click="answer(activeChat); addText(activeChat)" class="bi bi-send-fill" :class="sendIcon ? 'show' : 'hide'"></i>
+                        <i v-if="micIcon" class="bi bi-mic-fill"></i>
+                    
                 </div>
 
             </div>
@@ -121,7 +122,7 @@
         </div>
         <div v-if="newChatMenu" class="popoppe">
             <input v-model="newChatName" class="new-chat" placeholder="Nome contatto" type="text">
-            <input v-model="newChatText" class="new-chat text" placeholder="Messaggio..." type="text">
+            <input v-model="newChatText" class="new-chat text" placeholder="Messaggio..."  type="text">
             <div class="button-new-chat">
                 <div @click="newChat()" class="btn send">Invia</div>
                 <div @click="toggleNewChatMenu()" class="btn cancel">Cancella</div>
