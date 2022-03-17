@@ -231,12 +231,24 @@ const app = new Vue({
             this.newChatMenu = !this.newChatMenu
          },
         newChat(){
+            this.newChatMenu = !this.newChatMenu
             const d = new Date();
             let date = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
            if(this.newChatName != '' && this.newChatText != '') {
             this.arrContact.unshift({name: this.newChatName, lastAccess: date, img: 'img/avatar_2.jpg', chat: [{text: this.newChatText, data: date, status: 'sent', menu: false}], visibility: true})
             this.newChatName = ''
             this.newChatText = ''
+            setTimeout(() => {
+                let randomIndex = Math.floor(Math.random() * this.arrRandomText.length)
+                this.newText.text = this.arrRandomText[randomIndex]
+                const d = new Date();
+                this.newText.data = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
+                this.newText.status = 'recived'
+                this.arrContact[0].chat.push({...this.newText})
+                this.newText.text = ''
+                this.arrContact[0].lastAccess = 'ultimo accesso alle ' + this.newText.data
+                }, 3000)
+
            } 
         }
     },
