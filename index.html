@@ -125,10 +125,10 @@
                         <i class="bi bi-emoji-smile"></i>
                     </div>
                     <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); " @keydown="online(index);">
-                    
+                    <div class="speak">
                         <i  @click="answer(activeChat); addText(activeChat)" class="bi bi-send-fill" :class="sendIcon ? 'show' : 'hide'"></i>
                         <i v-if="micIcon" class="bi bi-mic-fill"></i>
-                    
+                    </div>
                 </div>
 
             </div>
