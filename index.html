@@ -14,7 +14,7 @@
 <body>
     <div id="app" :data-theme="theme">
     <header>
-        <button @click="themeChanging(); changeTheme()">Switch theme</button>
+        
     </header>
     <div id="root">
         <div id="container">
@@ -25,8 +25,9 @@
                         <img src="img/avatar_1.jpg" alt="">
                     <p>Mirko</p></div>
                     <div class="user-menu-icons">
+                        <i @click="themeChanging(); changeTheme()" class="bi bi-circle-half"></i>
                         <i class="bi bi-arrow-clockwise"></i>
-                        <i class="bi bi-chat-left-fill"></i>
+                        <i @click="toggleNewChatMenu()" class="bi bi-chat-left-fill"></i>
                         <i class="bi bi-three-dots-vertical"></i>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
                         <div class="chat-content">
                             <div class="chat-info">
                                 <p>{{ item.name }}</p>
-                                <span>{{item.lastAccess}}</span>
+                                <span>{{item.lastAccess.substr(20, 8)}}</span>
                             </div>
                             <div class="chat-last-text">
                                 <p>{{ item.chat[item.chat.length -1].text.substr(0, 35) }} <span v-if="item.chat[item.chat.length -1].text.length > 35">...</span>  </p>
@@ -109,7 +110,7 @@
                     <div class="emoji">
                         <i class="bi bi-emoji-smile"></i>
                     </div>
-                    <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); ">
+                    <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); " @keydown="online(index)">
                     <div class="speak">
                         <i class="bi bi-mic-fill"></i>
                     </div>
@@ -117,6 +118,14 @@
 
             </div>
 
+        </div>
+        <div v-if="newChatMenu" class="popoppe">
+            <input v-model="newChatName" class="new-chat" placeholder="Nome contatto" type="text">
+            <input v-model="newChatText" class="new-chat text" placeholder="Messaggio..." type="text">
+            <div class="button-new-chat">
+                <div @click="newChat()" class="btn send">Invia</div>
+                <div @click="toggleNewChatMenu()" class="btn cancel">Cancella</div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,9 @@
 const app = new Vue({
     el: '#app',
     data: {
+        newChatMenu: false,
+        newChatName: '',
+        newChatText: '',
         themeChange: true,
         theme: 'light',
         messageId: 0,
@@ -11,12 +14,13 @@ const app = new Vue({
         newText: {
             text: '',
             data: '',
-            status: ''
+            status: '',
+            menu: false
         },
         arrContact: [
             {
                 name: 'Voldemort',
-                lastAccess: '13:34',
+                lastAccess: 'ultimo accesso alle 13:44',
                 img: 'img/voldemort.jpg',
                 chat: [
                     {
@@ -48,7 +52,7 @@ const app = new Vue({
             }, 
             {
                 name: 'Cetto la qualunque',
-                lastAccess: '13:34',
+                lastAccess: 'ultimo accesso alle 13:34',
                 img: 'img/cetto.jpg',
                 chat: [
                     {
@@ -69,7 +73,7 @@ const app = new Vue({
             },
             {
                 name: 'Dart Vather (Your Father)',
-                lastAccess: '13:54',
+                lastAccess: 'ultimo accesso alle 13:54',
                 img: 'img/darth.webp',
                 chat: [
                     {
@@ -95,7 +99,7 @@ const app = new Vue({
             },
             {
                 name: 'Buffy the Slayer',
-                lastAccess: '13:34',
+                lastAccess: 'ultimo accesso alle 13:34',
                 img: 'img/buffy.jpg',
                 chat: [
                     {
@@ -127,7 +131,7 @@ const app = new Vue({
             },
             {
                 name: '420',
-                lastAccess: '13:34',
+                lastAccess: 'ultimo accesso alle 13:34',
                 img: 'img/fibra.jpg',
                 chat: [
                     {
@@ -167,6 +171,9 @@ const app = new Vue({
         selectChat: function (index) {
             this.activeChat = index
         },
+        online(index) {
+            this.arrContact[index].lastAccess = 'Online'
+        },
         addText: function (index){
             if(this.newText.text != '')
             {this.newText.text = this.newText.text.trim()
@@ -189,7 +196,7 @@ const app = new Vue({
             this.newText.status = 'recived'
             this.arrContact[index].chat.push({...this.newText})
             this.newText.text = ''
-            this.arrContact[index].lastAccess = this.newText.data
+            this.arrContact[index].lastAccess = 'ultimo accesso alle ' + this.newText.data
             }, 3000)
             
         }},
@@ -215,11 +222,23 @@ const app = new Vue({
         changeTheme(){
             if(this.themeChange){
             this.theme = 'light';
-        } else {
+            } else {
             console.log('dsdd')
             this.theme = 'dark';
+            }
+         },
+         toggleNewChatMenu(){
+            this.newChatMenu = !this.newChatMenu
+         },
+        newChat(){
+            const d = new Date();
+            let date = d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes()
+           if(this.newChatName != '' && this.newChatText != '') {
+            this.arrContact.unshift({name: this.newChatName, lastAccess: date, img: 'img/avatar_2.jpg', chat: [{text: this.newChatText, data: date, status: 'sent', menu: false}], visibility: true})
+            this.newChatName = ''
+            this.newChatText = ''
+           } 
         }
-    }
     },
 
 });

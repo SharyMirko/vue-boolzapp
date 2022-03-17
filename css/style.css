@@ -386,3 +386,50 @@ header {
 ul.sent {
     right: 1.4rem
 }
+
+.popoppe {
+    height: 50vh;
+    width: 40vw;
+    background-color: var(--notification-bg);
+    z-index: 10000;
+    position: absolute;
+    top: 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 20px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-chat {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    width: 15rem;
+}
+.new-chat:focus-visible {
+    outline: none;
+}
+
+.new-chat.text {
+    margin-top: 5rem;
+}
+
+.button-new-chat {
+    display: flex;
+    flex-direction: row;
+    width: 15rem;
+    justify-content: space-evenly;
+}
+
+.btn {
+    width: 5rem;
+    height: 2rem;
+    margin-top: 1rem;
+    background-color: #004640;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
