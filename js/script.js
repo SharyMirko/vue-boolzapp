@@ -266,6 +266,11 @@ const app = new Vue({
             this.arrContact.splice(index, 1)
             this.dropChatMenu = false
         },
+        deleteAllText(index){
+            console.log('s')
+            this.arrContact[index].chat = []
+            this.dropChatMenu = !this.dropChatMenu
+        },
         toggleChatMenu(){
             this.dropChatMenu = !this.dropChatMenu
         }

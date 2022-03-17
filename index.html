@@ -58,7 +58,7 @@
                                 <span>{{item.lastAccess.substr(20, 8)}}</span>
                             </div>
                             <div class="chat-last-text">
-                                <p>{{ item.chat[item.chat.length -1].text.substr(0, 35) }} <span v-if="item.chat[item.chat.length -1].text.length > 35">...</span>  </p>
+                                <p v-if="item.chat.length > 0">{{ item.chat[item.chat.length -1].text.substr(0, 35) }} <span v-if="item.chat[item.chat.length -1].text.length > 35">...</span>  </p>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="dropmenu-chat" :class="dropChatMenu ? 'show' : 'hide'">
                             <ul>
                                 <li @click="deleteChat(activeChat)">Elimina Chat</li>
-                                <li>Elimina Messaggi</li>
+                                <li @click="deleteAllText(activeChat)">Elimina Messaggi</li>
                             </ul>
 
                         </div>
