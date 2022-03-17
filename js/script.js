@@ -1,6 +1,9 @@
+Vue.use(EmojiPicker)
 const app = new Vue({
     el: '#app',
     data: {
+        input: '',
+        search: '',
         header1: true,
         header2: false,
         dropChatMenu: false,
@@ -277,9 +280,18 @@ const app = new Vue({
         },
         toggleChatMenu(){
             this.dropChatMenu = !this.dropChatMenu
-        }
+        },
+        append(emoji) {
+            this.newText.text += emoji
+          },
     },
-
+    directives: {
+        focus: {
+          inserted(el) {
+            el.focus()
+          },
+        },
+      }
 });
 
 

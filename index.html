@@ -122,7 +122,32 @@
                 <div v-if="header1" class="chat-footer"></div>
                 <div v-if="header2" class="chat-footer">
                     <div class="emoji">
-                        <i class="bi bi-emoji-smile"></i>
+                        
+                        <emoji-picker @emoji="insert" :search="search">
+                            <div slot="emoji-invoker" slot-scope="{ events: { click: clickEvent } }" @click.stop="clickEvent">
+                              <i class="bi bi-emoji-smile"></i>
+                            </div>
+                            <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
+                                <div class="emoji-picker" style="bottom: 4rem">
+                                  <div class="emoji-picker__search">
+                                    <input type="text" v-model="search" v-focus>
+                                  </div>
+                                  <div>
+                                    <div v-for="(emojiGroup, category) in emojis" :key="category">
+                                      <h5>{{ category }}</h5>
+                                      <div class="emojis">
+                                        <span
+                                          v-for="(emoji, emojiName) in emojiGroup"
+                                          :key="emojiName"
+                                          @click="append(emoji)"
+                                          :title="emojiName"
+                                        >{{ emoji }}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </emoji-picker>
                     </div>
                     <input v-model="newText.text" type="text" :id="{text: index == activeChat}" class="new-text-chat"  placeholder="Scrivi un messaggio" v-for="(item, index) in arrContact" :class="{active: index == activeChat}" v-on:keyup.enter="answer(index); addText(index); " @keydown="online(index);">
                     <div class="speak">
@@ -145,7 +170,7 @@
     </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    
+    <script src="https://unpkg.com/vue-emoji-picker/dist/vue-emoji-picker.js"></script>
 		<script src="js/script.js"></script>
 </body>
 </html>
