@@ -12,7 +12,10 @@
     <title>Boolzap! Chatta con te stesso!</title>
 </head>
 <body>
-    <header></header>
+    <div id="app" :data-theme="theme">
+    <header>
+        <button @click="themeChanging(); changeTheme()">Switch theme</button>
+    </header>
     <div id="root">
         <div id="container">
             <div class="leftbar">
@@ -116,7 +119,7 @@
 
         </div>
     </div>
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 		<script src="js/script.js"></script>
 </body>

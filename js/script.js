@@ -1,6 +1,8 @@
 const app = new Vue({
-    el: '#root',
+    el: '#app',
     data: {
+        themeChange: true,
+        theme: 'light',
         messageId: 0,
         dropdown: false,
         newtext: '',
@@ -205,7 +207,19 @@ const app = new Vue({
         },
         deleteText(index, i) {
             this.arrContact[index].chat.splice(i, 1);
+        },
+        themeChanging(){
+            console.log('ciao')
+            this.themeChange = !this.themeChange 
+        },
+        changeTheme(){
+            if(this.themeChange){
+            this.theme = 'light';
+        } else {
+            console.log('dsdd')
+            this.theme = 'dark';
         }
+    }
     },
 
 });
