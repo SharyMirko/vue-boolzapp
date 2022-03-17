@@ -15,7 +15,7 @@
   }
 
   [data-theme="dark"] {
-    --background-color-body: #2e2e2e;
+    --background-color-body: #383838;
     --background-color-header: #004640;
     --container-color: #272727;
     --notification-color: #00405c;
@@ -287,8 +287,24 @@ header {
     overflow-y: scroll;
 }
 
+.chat-body.bg-body {
+    background-color: #f8f8f8;
+    background-image: url(../img/bg-01.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 [data-theme="dark"] .chat-body {
     background-image: url('../img/bg-dark.jpg');
+}
+
+[data-theme="dark"] .chat-body.bg-body {
+    background-color: #202E35;
+    background-image: url(../img/bg-0.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .chat-body.active{
@@ -464,3 +480,4 @@ ul.sent {
 .show {
     display: block;
 }
+

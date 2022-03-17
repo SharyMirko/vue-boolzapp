@@ -1,6 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
+        header1: true,
+        header2: false,
         dropChatMenu: false,
         micIcon: true,
         sendIcon: false,
@@ -173,6 +175,8 @@ const app = new Vue({
     methods: {
         selectChat: function (index) {
             this.activeChat = index
+            this.header1 = false
+            this.header2 = true
         },
         online(index) {
             this.arrContact[index].lastAccess = 'Online'

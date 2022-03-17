@@ -71,8 +71,11 @@
 
 
             <div class="rightbar">
+                <div v-if="header1" class="chat-header"></div>
+
+
                 <!-- chat header -->
-                <div class="chat-header">
+                <div v-if="header2" class="chat-header">
                     <div v-for="(item, index) in arrContact" class="user-info" :class="activeChat === index ? 'active' : ''">
                         <div class="user-avatar">
                             <img :src="item.img" alt="">
@@ -96,7 +99,10 @@
                 </div>
 
                 <!-- chat body -->
-                <div v-for="(item, index) in arrContact" class="chat-body" :class="activeChat === index ? 'active' : ''">
+                <div v-if="header1" class="chat-body active bg-body">
+        
+                </div>
+                <div v-if="header2" v-for="(item, index) in arrContact" class="chat-body" :class="activeChat === index ? 'active' : ''">
                     
                     <div v-for="(ele, i) in item.chat" 
                     :class="ele.status == 'recived' ? 'contact-text' : 'main-user-text'" @contextmenu.prevent="menu(index, i)">
@@ -113,7 +119,8 @@
                 </div>
 
                 <!-- chat footer-->
-                <div class="chat-footer">
+                <div v-if="header1" class="chat-footer"></div>
+                <div v-if="header2" class="chat-footer">
                     <div class="emoji">
                         <i class="bi bi-emoji-smile"></i>
                     </div>
@@ -138,6 +145,7 @@
     </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    
 		<script src="js/script.js"></script>
 </body>
 </html>
