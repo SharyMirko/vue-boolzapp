@@ -6,6 +6,7 @@
     --notification-bg: #f2fbff;
     --chat-list-container: #fff;
     --chat-list-hv-active: #e8ebeb;
+    --new-chat-menu: #dbdbdb;
     --user-text: #d5f9ba;
     --contact-text: #fff;
     --search: #fafafa;
@@ -20,6 +21,7 @@
     --container-color: #272727;
     --notification-color: #00405c;
     --notification-bg: #0b0b0b;
+    --new-chat-menu: #575757;
     --chat-list-container: #1e1e1e;
     --chat-list-hv-active: #000;
     --user-text: #323232;
@@ -404,9 +406,9 @@ ul.sent {
 }
 
 .popoppe {
-    height: 50vh;
-    width: 40vw;
-    background-color: var(--notification-bg);
+    height: 15rem;
+    width: 20rem;
+    background-color: var(--new-chat-menu);
     z-index: 10000;
     position: absolute;
     top: 3rem;
@@ -443,7 +445,7 @@ ul.sent {
     width: 5rem;
     height: 2rem;
     margin-top: 1rem;
-    background-color: #004640;
+    background-color: var(--user-text);
     display: flex;
     align-items: center;
     justify-content: center;
