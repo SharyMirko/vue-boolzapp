@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
+        dropChatMenu: false,
         micIcon: true,
         sendIcon: false,
         newChatMenu: false,
@@ -260,6 +261,13 @@ const app = new Vue({
         },
         toggleIcon(){
             this.sendIcon = !this.sendIcon
+        },
+        deleteChat(index) {
+            this.arrContact.splice(index, 1)
+            this.dropChatMenu = false
+        },
+        toggleChatMenu(){
+            this.dropChatMenu = !this.dropChatMenu
         }
     },
 

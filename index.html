@@ -84,7 +84,14 @@
                     <div class="chat-setting-icon">
                         <i class="bi bi-search"></i>
                         <i class="bi bi-paperclip"></i>
-                        <i class="bi bi-three-dots-vertical"></i>
+                        <i @click="toggleChatMenu" class="bi bi-three-dots-vertical"></i>
+                        <div class="dropmenu-chat" :class="dropChatMenu ? 'show' : 'hide'">
+                            <ul>
+                                <li @click="deleteChat(activeChat)">Elimina Chat</li>
+                                <li>Elimina Messaggi</li>
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
 

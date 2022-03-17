@@ -434,6 +434,29 @@ ul.sent {
     color: #fff;
 }
 
+.dropmenu-chat {
+    height: fit-content;
+    width: 15vw;
+    background-color: var(--container-color);
+    position: absolute;
+    right: 1rem;
+    margin-top: .9rem;
+    text-align: center;
+}
+
+.dropmenu-chat ul {
+    list-style: none;
+    text-align: left;
+}
+
+.dropmenu-chat li {
+    margin: 1rem;
+}
+
+.dropmenu-chat li:hover {
+    background-color: var(--chat-list-hv-active);
+}
+
 .hide {
     display: none;
 }
