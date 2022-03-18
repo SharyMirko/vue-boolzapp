@@ -215,7 +215,7 @@ const app = new Vue({
             }, 3000)
             
         }},
-        search() {
+        searchUser() {
             this.arrContact.forEach((element) => {
                 if (element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
                     element.visibility = true;
