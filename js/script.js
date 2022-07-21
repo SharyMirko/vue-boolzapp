@@ -70,7 +70,7 @@ const app = new Vue({
                         menu: false
                     },
                     {
-                        text: 'Hai ragione Mirko. Però come criterio di massima, come sistema di riferimento, come atteggiamento preferenziale: tu fatti i cazzi toi.',
+                        text: 'Hai ragione Mirko. Però come criterio di massima, come sistema di riferimento, come atteggiamento preferenziale: tu fatti i fatti toi.',
                         data: '12:34',
                         status: 'recived',
                         menu: false
@@ -80,7 +80,7 @@ const app = new Vue({
                 visibility: true
             },
             {
-                name: 'Dart Vather (Your Father)',
+                name: 'Dart Vather',
                 lastAccess: 'ultimo accesso alle 13:54',
                 img: 'img/darth.webp',
                 chat: [
@@ -97,7 +97,7 @@ const app = new Vue({
                         menu: false
                     },
                     {
-                        text: 'Ask your mom!',
+                        text: 'Seriusly!!!',
                         data: '12:36',
                         status: 'recived',
                         menu: false
@@ -138,7 +138,7 @@ const app = new Vue({
                 visibility: true
             },
             {
-                name: '420',
+                name: 'BestFriend',
                 lastAccess: 'ultimo accesso alle 13:34',
                 img: 'img/fibra.jpg',
                 chat: [
